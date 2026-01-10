@@ -1,5 +1,5 @@
 import ProductCard from './ProductCard';
-import Filters from './Filters';
+import Filtres from './Filtres';
 import { useState } from 'react';
 
 const COLORS = ['red', 'green', 'yellow', 'black'];
