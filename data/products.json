@@ -1,1 +1,24 @@
-
+[
+  {
+    "id": "bcf-001",
+    "title": "Ikariso Rasta",
+    "subtitle": "Ikariso y'uburanga, ibara rihambaye",
+    "price": "FBu 25,000",
+    "image": "/images/products/rasta-1.jpg",
+    "alt": "Ikariso rasta y'ibara",
+    "colors": ["red","green","yellow","black"],
+    "tags": ["Rasta","Festival"],
+    "badges": ["New"]
+  },
+  {
+    "id": "bcf-002",
+    "title": "Umupira Nature",
+    "subtitle": "Umupira w'ibara ry'uburabyo",
+    "price": "FBu 18,000",
+    "image": "/images/products/nature-1.jpg",
+    "alt": "Umupira w'ibara ry'uburabyo",
+    "colors": ["green","black"],
+    "tags": ["Nature","Héritage"],
+    "badges": ["Best Seller"]
+  }
+]
