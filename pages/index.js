@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Hero from '../components/Hero';
+import Hero from '../components/hero';
 import ProductGrid from '../components/ProductGrid';
 import BentoBlock from '../components/BentoBlock';
 import NewsletterForm from '../components/NewsletterForm';
