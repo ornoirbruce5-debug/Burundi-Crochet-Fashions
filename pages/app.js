@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import layout from '../components/layout';
+import Layout from '../components/layout';
 
 function MyApp({ Component, pageProps }) {
   const [lang, setLang] = useState('ki');
