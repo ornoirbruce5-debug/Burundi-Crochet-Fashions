@@ -4,22 +4,17 @@ import ProductGrid from '../components/ProductGrid';
 import BentoBlock from '../components/BentoBlock';
 import NewsletterForm from '../components/NewsletterForm';
 import Testimonials from '../components/Testimonials';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import productsData from '../data/products.json';
 
-export default function Home({ lang }) {
-  const [products, setProducts] = useState([]);
+export default function Home({ lang, productsData }) {
   const [filters, setFilters] = useState({ color: null, style: null });
-
-  useEffect(() => {
-    setProducts(productsData);
-  }, []);
 
   const handleFilter = ({ type, value }) => {
     setFilters((prev) => ({ ...prev, [type]: prev[type] === value ? null : value }));
   };
 
-  const filtered = products.filter((p) => {
+  const filtered = productsData.filter((p) => {
     if (filters.color && !p.colors.includes(filters.color)) return false;
     if (filters.style && !p.tags.includes(filters.style)) return false;
     return true;
@@ -29,7 +24,10 @@ export default function Home({ lang }) {
     <>
       <Head>
         <title>Burundi Crochet Fashions — Imideri ya Crochet</title>
-        <meta name="description" content="Imideri ya crochet ivuye mu mutima w'Uburundi. Reba ibicuruzwa vyacu." />
+        <meta
+          name="description"
+          content="Imideri ya crochet ivuye mu mutima w'Uburundi. Reba ibicuruzwa vyacu."
+        />
       </Head>
 
       <main>
@@ -38,7 +36,11 @@ export default function Home({ lang }) {
         <section id="products" className="py-8">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-display mb-4">Ibicuruzwa</h2>
-            <ProductGrid products={filtered} onFilter={handleFilter} selectedFilters={filters} />
+            <ProductGrid
+              products={filtered}
+              onFilter={handleFilter}
+              selectedFilters={filters}
+            />
           </div>
         </section>
 
@@ -51,4 +53,14 @@ export default function Home({ lang }) {
       </main>
     </>
   );
+}
+
+// ✅ Static props for Next.js export
+export async function getStaticProps() {
+  const productsData = require('../data/products.json');
+  return {
+    props: {
+      productsData,
+    },
+  };
 }
